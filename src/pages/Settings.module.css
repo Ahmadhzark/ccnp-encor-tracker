@@ -1,0 +1,65 @@
+.body { display: flex; flex-direction: column; gap: var(--sp-5); }
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+}
+.fieldText { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.fieldLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+.fieldHint { color: var(--ink-2); font-size: var(--text-sm); max-width: 46ch; }
+
+.divider { height: 1px; background: var(--rule-soft); margin: calc(var(--sp-1) * -1) 0; }
+
+/* dates */
+.dates { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+@media (max-width: 560px) { .dates { grid-template-columns: 1fr; } }
+
+.dateField { display: flex; flex-direction: column; gap: var(--sp-2); }
+.dateInput {
+  height: 42px;
+  padding: 0 var(--sp-3);
+  border-radius: var(--r-md);
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+.dateInput:hover { border-color: color-mix(in srgb, var(--brand) 30%, var(--rule)); }
+.dateInput:focus-visible { box-shadow: var(--ring); border-color: var(--brand); }
+.dateInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--dur-2) var(--ease);
+}
+.dateInput:hover::-webkit-calendar-picker-indicator { opacity: 1; }
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md);
+  background: var(--brand-soft);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+.summary svg { color: var(--brand); flex: none; }
+.summary b { font-weight: 650; }
+
+.warnSummary { background: color-mix(in srgb, var(--bad) 12%, transparent); }
+.warnSummary svg { color: var(--bad); }
+
+.confirm { display: flex; gap: var(--sp-2); animation: pop var(--dur-2) var(--spring); }
+@keyframes pop { from { opacity: 0; transform: scale(0.92); } }
