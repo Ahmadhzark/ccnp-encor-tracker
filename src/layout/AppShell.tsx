@@ -2,7 +2,6 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { Icon } from "../components/Icon";
 import type { IconName } from "../components/Icon";
-import { ThemePicker } from "../components/ThemePicker";
 import { Toaster } from "../components/Toaster";
 import { daysLeft } from "../lib/time";
 import { useProgress } from "../store/useProgress";
@@ -56,9 +55,6 @@ export function AppShell() {
       <header className={styles.topbar}>
         <div className={styles.pageTitle}>{title}</div>
         <div className={styles.spacer} />
-        <div className={styles.themeQuick}>
-          <ThemePicker compact />
-        </div>
         <NavLink
           to="/settings"
           className={({ isActive }) => clsx(styles.iconLink, isActive && styles.iconLinkActive)}

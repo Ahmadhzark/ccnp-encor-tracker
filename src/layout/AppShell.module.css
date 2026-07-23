@@ -1,5 +1,6 @@
 .shell {
-  min-height: 100%;
+  height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template-columns: var(--nav-w) 1fr;
   grid-template-rows: var(--topbar-h) 1fr;
@@ -43,10 +44,6 @@
 .spacer { flex: 1; }
 .pageTitle { font-size: var(--text-md); font-weight: 650; letter-spacing: -0.01em; }
 
-/* quick theme swatches in the topbar — hidden on small screens (use Settings). */
-.themeQuick { display: flex; }
-@media (max-width: 680px) { .themeQuick { display: none; } }
-
 /* topbar icon button (settings) */
 .iconLink {
   display: grid;
@@ -76,6 +73,7 @@
   flex-direction: column;
   gap: 2px;
   overflow-y: auto;
+  min-height: 0; /* let the sidebar scroll internally instead of growing the page */
 }
 .navLink {
   display: flex;
@@ -98,6 +96,7 @@
 .main {
   grid-area: main;
   overflow-y: auto;
+  min-height: 0; /* only the content column scrolls; brand + sidebar stay fixed */
   padding: var(--sp-8) var(--sp-8) var(--sp-16);
 }
 .content { max-width: var(--maxw); margin: 0 auto; }
