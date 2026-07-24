@@ -109,6 +109,10 @@ export function AppShell() {
         ))}
       </nav>
 
+      <NavLink to="/log" className={styles.fab} title="Log study time" aria-label="Log study time">
+        <Icon name="plus" size={24} strokeWidth={2.5} />
+      </NavLink>
+
       <Toaster />
     </div>
   );

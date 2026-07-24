@@ -7,7 +7,7 @@
   stroke-linecap: round;
   /* offset is driven per-frame in JS (useCountUp); keep only light smoothing. */
   transition: stroke-dashoffset var(--dur-1) linear;
-  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--brand) 45%, transparent));
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--grad-2) 50%, transparent));
 }
 .center { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
 .value { font-family: var(--font-mono); font-weight: 650; line-height: 1; font-variant-numeric: tabular-nums; }

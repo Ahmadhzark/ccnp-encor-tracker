@@ -26,8 +26,9 @@ export function ProgressRing({ value, size = 132, stroke = 11, label, valueSize 
       <svg className={styles.svg} width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
         <defs>
           <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="var(--brand-lit)" />
-            <stop offset="1" stopColor="var(--brand)" />
+            <stop offset="0" stopColor="var(--grad-1)" />
+            <stop offset="0.5" stopColor="var(--grad-2)" />
+            <stop offset="1" stopColor="var(--grad-3)" />
           </linearGradient>
         </defs>
         <circle className={styles.track} cx={size / 2} cy={size / 2} r={r} strokeWidth={stroke} />

@@ -28,10 +28,10 @@
   max-width: 22px;
   min-height: 2px;
   border-radius: 4px 4px 0 0;
-  background: var(--brand);
-  transition: background var(--dur-2) var(--ease), filter var(--dur-2) var(--ease);
+  background: linear-gradient(180deg, var(--grad-1), var(--grad-3));
+  transition: filter var(--dur-2) var(--ease);
 }
-.highlight { background: var(--brand-lit); }
+.highlight { background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); box-shadow: 0 0 10px color-mix(in srgb, var(--grad-2) 45%, transparent); }
 .col:hover .bar { filter: brightness(1.08); }
 .empty { background: var(--surface-3); }
 

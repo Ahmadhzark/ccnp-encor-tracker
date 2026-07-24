@@ -2,7 +2,7 @@
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
 
 .pageHead { display: flex; flex-direction: column; gap: 4px; }
-.pageHead h1 { font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.02em; }
+.pageHead h1 { font-size: var(--text-xl); font-weight: 750; letter-spacing: -0.02em; }
 .pageHead p { color: var(--ink-2); font-size: var(--text-sm); max-width: 60ch; }
 
 /* dashboard hero */

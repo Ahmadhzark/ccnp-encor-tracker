@@ -34,10 +34,10 @@
   display: grid; place-items: center; flex: none;
   background: var(--surface-2); color: var(--ink-3);
 }
-.unlocked .medal { background: linear-gradient(150deg, var(--brand-lit), var(--brand)); color: var(--on-brand); box-shadow: var(--shadow-sm); }
+.unlocked .medal { background: linear-gradient(150deg, var(--grad-1), var(--grad-3)); color: #fff; box-shadow: var(--shadow-sm); }
 .badgeBody { flex: 1; min-width: 0; }
 .badgeLabel { font-size: var(--text-sm); font-weight: 600; }
 .locked .badgeLabel { color: var(--ink-2); }
 .bar { height: 5px; margin-top: 7px; background: var(--surface-2); border-radius: var(--r-full); overflow: hidden; }
-.barFill { height: 100%; border-radius: var(--r-full); background: var(--brand); transition: width 0.7s var(--ease); }
+.barFill { height: 100%; border-radius: var(--r-full); background: linear-gradient(90deg, var(--grad-1), var(--grad-3)); transition: width 0.7s var(--ease); }
 .badgeMeta { margin-top: 5px; font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); }
