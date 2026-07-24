@@ -17,6 +17,7 @@ const idbStorage: StateStorage = {
 interface ProgressStore extends ProgressData {
   settings: Settings;
   setWeeklyTarget: (hours: number) => void;
+  setName: (name: string) => void;
   setStartDate: (iso: string | null) => void;
   setExamDate: (iso: string | null) => void;
   toggleTopic: (id: string) => void;
@@ -44,6 +45,9 @@ export const useProgress = create<ProgressStore>()(
 
       setWeeklyTarget: (hours) =>
         set((s) => ({ settings: { ...s.settings, weeklyHoursTarget: Math.max(1, Math.min(60, Math.round(hours))) } })),
+
+      setName: (name) =>
+        set((s) => ({ settings: { ...s.settings, name: name.trim() || undefined } })),
 
       setStartDate: (iso) =>
         set((s) => ({ settings: { ...s.settings, startDate: iso || undefined } })),

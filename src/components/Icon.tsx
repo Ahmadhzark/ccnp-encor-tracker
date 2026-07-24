@@ -6,7 +6,9 @@ export type IconName =
   | "sun" | "moon" | "monitor" | "search" | "check" | "chevronDown"
   | "menu" | "close" | "flame" | "clock" | "target"
   | "bookmark" | "plus" | "layers" | "sort"
-  | "settings" | "trash" | "calendar" | "sparkle" | "reset";
+  | "settings" | "trash" | "calendar" | "sparkle" | "reset"
+  | "bell" | "play" | "pause" | "stop" | "chevronRight"
+  | "book" | "cards" | "help" | "user" | "home" | "pencil";
 
 const PATHS: Record<IconName, string> = {
   dashboard: "M4 4h7v7H4zM13 4h7v4h-7zM13 10h7v10h-7zM4 13h7v7H4z",
@@ -33,6 +35,17 @@ const PATHS: Record<IconName, string> = {
   calendar: "M4 5h16v15H4zM4 10h16M8 3v4M16 3v4",
   sparkle: "M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z",
   reset: "M4 12a8 8 0 1 0 2.5-5.8M6 3v4h4",
+  bell: "M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0",
+  play: "M8 5v14l11-7z",
+  pause: "M9 5v14M15 5v14",
+  stop: "M7 7h10v10H7z",
+  chevronRight: "M9 6l6 6-6 6",
+  book: "M6 4h9l4 4v12H6zM14 4v5h5M9 13h6M9 16h4",
+  cards: "M9 4h10v10H9zM9 4a2 2 0 0 0-2 2M5 8v10a2 2 0 0 0 2 2h10",
+  help: "M9.1 9a3 3 0 1 1 4 2.8c-.9.5-1.1 1-1.1 2M12 17h.01M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z",
+  user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0",
+  home: "M4 11l8-7 8 7M6 10v10h12V10",
+  pencil: "M4 20h4L18 10l-4-4L4 16zM13 7l4 4",
 };
 
 interface IconProps {

@@ -43,6 +43,7 @@ export interface Session {
 
 export interface Settings {
   weeklyHoursTarget: number;
+  name?: string; // shown in the dashboard greeting
   startDate?: string; // ISO; overrides the curriculum default when set
   examDate?: string; // ISO; overrides the curriculum default when set
 }

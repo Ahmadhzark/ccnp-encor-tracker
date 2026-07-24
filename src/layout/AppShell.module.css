@@ -97,9 +97,10 @@
   grid-area: main;
   overflow-y: auto;
   min-height: 0; /* only the content column scrolls; brand + sidebar stay fixed */
+  min-width: 0;  /* let the grid column shrink to the viewport (no h-overflow) */
   padding: var(--sp-8) var(--sp-8) var(--sp-16);
 }
-.content { max-width: var(--maxw); margin: 0 auto; }
+.content { max-width: var(--maxw); min-width: 0; margin: 0 auto; }
 
 /* mobile bottom-nav variant */
 .tabbar { display: none; }

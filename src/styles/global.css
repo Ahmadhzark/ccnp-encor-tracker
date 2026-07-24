@@ -50,6 +50,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    /* Negative delay starts every animation already completed, so entrance
+       animations that fade in from opacity:0 never leave content hidden. */
+    animation-delay: -1ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;

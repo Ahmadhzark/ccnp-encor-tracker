@@ -125,3 +125,10 @@
   --d1: #2a78d6; --d2: #128a45; --d3: #d1477f; --d4: #d98b12; --d5: #1a9e78; --d6: #e0592a;
   --hm-0: #dde9df; --hm-1: #b0dcc0; --hm-2: #72c698; --hm-3: #329c6b; --hm-4: #1c6e4a;
 }
+
+/* ---- signature 3-stop gradient (progress rings, primary CTAs, FAB) ----
+   Tuned per theme so the "aurora" accent always harmonises with the palette. */
+:root, :root[data-theme="copper"] { --grad-1: #e2a24e; --grad-2: #c56b57; --grad-3: #9d5aa8; }
+:root[data-theme="midnight"]      { --grad-1: #8b5cf6; --grad-2: #5b8def; --grad-3: #22d3aa; }
+:root[data-theme="ocean"]         { --grad-1: #4aa3f0; --grad-2: #3fbfd6; --grad-3: #34d6a5; }
+:root[data-theme="meadow"]        { --grad-1: #2fb968; --grad-2: #17b3a6; --grad-3: #3a9bd6; }

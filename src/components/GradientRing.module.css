@@ -1,0 +1,9 @@
+.wrap { position: relative; display: inline-grid; place-items: center; }
+.svg { transform: rotate(-90deg); }
+.track { stroke: var(--surface-3); fill: none; }
+.fill {
+  fill: none;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--grad-2) 55%, transparent));
+}
+.center { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }

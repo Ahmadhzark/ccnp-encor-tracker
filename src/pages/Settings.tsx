@@ -9,6 +9,8 @@ import pageStyles from "./pages.module.css";
 import styles from "./Settings.module.css";
 
 export function Settings() {
+  const name = useProgress((s) => s.settings.name);
+  const setName = useProgress((s) => s.setName);
   const startDate = useProgress((s) => s.settings.startDate);
   const examDate = useProgress((s) => s.settings.examDate);
   const setStartDate = useProgress((s) => s.setStartDate);
@@ -46,6 +48,27 @@ export function Settings() {
         <h1>Settings</h1>
         <p>Make the tracker yours — pick a look, set your study window, and manage your data.</p>
       </div>
+
+      {/* ---- Profile ---- */}
+      <Card>
+        <CardHeader title="Profile" action={<span className="eyebrow">dashboard greeting</span>} />
+        <CardBody className={styles.body}>
+          <label className={styles.dateField}>
+            <span className={styles.fieldLabel}>
+              <Icon name="user" size={15} /> Your name
+            </span>
+            <input
+              type="text"
+              className={styles.dateInput}
+              placeholder="e.g. Ahmadh"
+              maxLength={24}
+              defaultValue={name ?? ""}
+              onBlur={(e) => setName(e.target.value)}
+            />
+            <span className={styles.fieldHint}>Shown in the dashboard greeting. Leave blank to keep it generic.</span>
+          </label>
+        </CardBody>
+      </Card>
 
       {/* ---- Appearance ---- */}
       <Card>
