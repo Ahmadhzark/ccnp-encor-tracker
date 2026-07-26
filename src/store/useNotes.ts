@@ -8,14 +8,15 @@ export interface Note {
   id: string;
   title: string;
   body: string;
+  topicId?: string; // optional link to a curriculum topic
   createdAt: string; // ISO
   updatedAt: string; // ISO
 }
 
 interface NotesStore {
   notes: Note[];
-  add: () => string; // creates a blank note at the top, returns its id
-  update: (id: string, patch: Partial<Pick<Note, "title" | "body">>) => void;
+  add: (topicId?: string) => string; // creates a blank note at the top, returns its id
+  update: (id: string, patch: Partial<Pick<Note, "title" | "body" | "topicId">>) => void;
   remove: (id: string) => void;
   insert: (note: Note) => void; // re-insert (used for undo), preserving order by updatedAt
 }
@@ -31,9 +32,9 @@ export const useNotes = create<NotesStore>()(
     (set) => ({
       notes: [],
 
-      add: () => {
+      add: (topicId) => {
         const now = new Date().toISOString();
-        const note: Note = { id: uid(), title: "", body: "", createdAt: now, updatedAt: now };
+        const note: Note = { id: uid(), title: "", body: "", topicId, createdAt: now, updatedAt: now };
         set((s) => ({ notes: [note, ...s.notes] }));
         return note.id;
       },
