@@ -8,7 +8,8 @@ export type IconName =
   | "bookmark" | "plus" | "layers" | "sort"
   | "settings" | "trash" | "calendar" | "sparkle" | "reset"
   | "bell" | "play" | "pause" | "stop" | "chevronRight"
-  | "book" | "cards" | "help" | "user" | "home" | "pencil";
+  | "book" | "cards" | "help" | "user" | "home" | "pencil"
+  | "mail" | "link" | "external" | "info" | "heart" | "github";
 
 const PATHS: Record<IconName, string> = {
   dashboard: "M4 4h7v7H4zM13 4h7v4h-7zM13 10h7v10h-7zM4 13h7v7H4z",
@@ -46,6 +47,12 @@ const PATHS: Record<IconName, string> = {
   user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0",
   home: "M4 11l8-7 8 7M6 10v10h12V10",
   pencil: "M4 20h4L18 10l-4-4L4 16zM13 7l4 4",
+  mail: "M4 6h16v12H4zM4 7l8 6 8-6",
+  link: "M9.5 14.5l5-5M10 7l1-1a4 4 0 0 1 6 6l-1 1M14 17l-1 1a4 4 0 0 1-6-6l1-1",
+  external: "M14 4h6v6M20 4l-9 9M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5",
+  info: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8h.01M11 11.5h1V16h1",
+  heart: "M12 20s-7-4.35-9.3-8.7A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 9.3 5.1C19 15.65 12 20 12 20z",
+  github: "M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21",
 };
 
 interface IconProps {

@@ -6,7 +6,9 @@ import { Labs } from "./pages/Labs";
 import { Log } from "./pages/Log";
 import { Analytics } from "./pages/Analytics";
 import { Goals } from "./pages/Goals";
+import { Notes } from "./pages/Notes";
 import { Settings } from "./pages/Settings";
+import { About } from "./pages/About";
 
 export function App() {
   return (
@@ -18,7 +20,9 @@ export function App() {
         <Route path="log" element={<Log />} />
         <Route path="analytics" element={<Analytics />} />
         <Route path="goals" element={<Goals />} />
+        <Route path="notes" element={<Notes />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="about" element={<About />} />
         <Route path="*" element={<Dashboard />} />
       </Route>
     </Routes>

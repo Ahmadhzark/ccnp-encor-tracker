@@ -1,0 +1,78 @@
+/* hero */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+.mark {
+  flex: none;
+  width: 62px; height: 62px; border-radius: var(--r-lg);
+  display: grid; place-items: center; color: #fff;
+  background: linear-gradient(150deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--grad-2) 40%, transparent);
+}
+.heroText h2 { font-size: var(--text-lg); font-weight: 750; letter-spacing: -0.02em; }
+.heroText p { margin-top: 6px; color: var(--ink-2); font-size: var(--text-sm); line-height: 1.6; max-width: 60ch; }
+.version {
+  display: inline-block; margin-top: var(--sp-3);
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-3);
+  padding: 3px 10px; border: 1px solid var(--rule); border-radius: var(--r-full);
+}
+@media (max-width: 560px) { .hero { flex-direction: column; text-align: center; } }
+
+/* section blocks */
+.block { display: flex; flex-direction: column; gap: var(--sp-3); }
+.blockTitle {
+  font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
+  letter-spacing: var(--tracking-wider); color: var(--ink-3);
+}
+
+/* links */
+.linkGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--sp-3); }
+.linkCard {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-4); border-radius: var(--r-lg);
+  background: var(--surface); border: 1px solid var(--rule); box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-1) var(--spring), border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+.linkCard:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--c) 55%, var(--rule)); box-shadow: var(--shadow-md); }
+.linkCard:active { transform: translateY(0) scale(0.98); }
+.linkChip { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: var(--c); background: color-mix(in srgb, var(--c) 16%, transparent); }
+.linkText { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.linkText b { font-size: var(--text-sm); font-weight: 650; color: var(--ink); }
+.linkText span { font-size: var(--text-xs); color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.linkArrow { color: var(--ink-3); flex: none; }
+
+/* trackers */
+.trackerList { display: flex; flex-direction: column; gap: var(--sp-3); }
+.trackerCard {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5); border-radius: var(--r-lg);
+  background: var(--surface); border: 1px solid var(--rule); box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-1) var(--ease), border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+.trackerCard:not(.disabled):hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--brand) 40%, var(--rule)); box-shadow: var(--shadow-md); }
+.trackerMain { flex: 1; min-width: 0; }
+.trackerTop { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+.trackerTop b { font-size: var(--text-base); font-weight: 700; letter-spacing: -0.01em; }
+.trackerMain p { margin-top: 4px; color: var(--ink-2); font-size: var(--text-sm); }
+.trackerArrow { color: var(--ink-3); flex: none; }
+
+.badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 9px; border-radius: var(--r-full); }
+.s_live { color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, transparent); }
+.s_current { color: var(--brand); background: var(--brand-soft); }
+.s_soon { color: var(--ink-3); background: var(--surface-3); }
+
+.disabled { cursor: default; opacity: 0.85; }
+.disabled:hover { transform: none; }
+
+.madeWith {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  color: var(--ink-3); font-size: var(--text-sm); padding-top: var(--sp-2);
+}
+.heart { color: var(--bad); }

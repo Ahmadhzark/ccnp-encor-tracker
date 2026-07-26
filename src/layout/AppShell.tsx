@@ -13,23 +13,38 @@ interface NavItem {
   icon: IconName;
 }
 
+// Full primary nav — shown in the desktop sidebar.
 const NAV: NavItem[] = [
   { to: "/", label: "Dashboard", icon: "dashboard" },
   { to: "/topics", label: "Topics", icon: "topics" },
   { to: "/labs", label: "Labs", icon: "labs" },
+  { to: "/notes", label: "Notes", icon: "book" },
   { to: "/log", label: "Log", icon: "clock" },
   { to: "/analytics", label: "Analytics", icon: "analytics" },
   { to: "/goals", label: "Goals", icon: "target" },
+];
+
+// Mobile bottom bar: same set minus Goals (still in the sidebar) so the six
+// tabs stay comfortable while Notes gets a spot.
+const TABS: NavItem[] = [
+  { to: "/", label: "Dashboard", icon: "dashboard" },
+  { to: "/topics", label: "Topics", icon: "topics" },
+  { to: "/labs", label: "Labs", icon: "labs" },
+  { to: "/notes", label: "Notes", icon: "book" },
+  { to: "/log", label: "Log", icon: "clock" },
+  { to: "/analytics", label: "Analytics", icon: "analytics" },
 ];
 
 const TITLES: Record<string, string> = {
   "/": "Dashboard",
   "/topics": "Topics",
   "/labs": "Labs",
+  "/notes": "Notes",
   "/log": "Log",
   "/analytics": "Analytics",
   "/goals": "Goals",
   "/settings": "Settings",
+  "/about": "About",
 };
 
 export function AppShell() {
@@ -82,6 +97,10 @@ export function AppShell() {
           </NavLink>
         ))}
         <div className={styles.navSpacer} />
+        <NavLink to="/about" className={({ isActive }) => clsx(styles.navLink, isActive && styles.navActive)}>
+          <Icon name="info" size={18} />
+          About
+        </NavLink>
         <NavLink to="/settings" className={({ isActive }) => clsx(styles.navLink, isActive && styles.navActive)}>
           <Icon name="settings" size={18} />
           Settings
@@ -96,7 +115,7 @@ export function AppShell() {
       </main>
 
       <nav className={styles.tabbar} aria-label="Primary">
-        {NAV.map((item) => (
+        {TABS.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}

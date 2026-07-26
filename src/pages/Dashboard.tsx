@@ -80,7 +80,7 @@ export function Dashboard() {
     const mins = ms / 60000;
     if (mins >= 1) {
       logSession(Math.round((ms / 3600000) * 100) / 100, "Study session");
-      toast(`Logged ${formatDuration(Math.round(mins))} of study 🎉`);
+      toast(`Logged ${formatDuration(Math.round(mins))} of study`);
     } else {
       toast("Session discarded — under a minute.");
     }
@@ -91,7 +91,7 @@ export function Dashboard() {
   const mm = Math.round((stats.hoursDone - hh) * 60);
 
   const quick: { label: string; icon: IconName; color: string; onClick: () => void }[] = [
-    { label: "Notes", icon: "book", color: "#22c55e", onClick: () => nav("/topics") },
+    { label: "Notes", icon: "book", color: "#22c55e", onClick: () => nav("/notes") },
     { label: "Flashcards", icon: "cards", color: "#8b5cf6", onClick: () => toast("Flashcards are coming soon.") },
     { label: "Quizzes", icon: "help", color: "#f59e0b", onClick: () => toast("Quizzes are coming soon.") },
     { label: "Analytics", icon: "analytics", color: "#3b82f6", onClick: () => nav("/analytics") },
@@ -104,11 +104,11 @@ export function Dashboard() {
         <div className={styles.greetText}>
           <h1>
             {greeting()}
-            {name ? <>, <span className={styles.name}>{name}</span></> : null} <span className={styles.wave}>👋</span>
+            {name ? <>, <span className={styles.name}>{name}</span></> : null}
           </h1>
           <p>Stay consistent, see the results.</p>
         </div>
-        <button className={styles.bell} aria-label="Notifications" onClick={() => toast("You're all caught up. 🎉")}>
+        <button className={styles.bell} aria-label="Notifications" onClick={() => toast("You're all caught up.")}>
           <Icon name="bell" size={20} />
         </button>
       </header>
@@ -213,7 +213,7 @@ export function Dashboard() {
       {/* streak + quick actions */}
       <div className={styles.bottomRow}>
         <section className={styles.panel}>
-          <div className={styles.panelTitle}><span className={styles.flame}>🔥</span> Study streak</div>
+          <div className={styles.panelTitle}><Icon name="flame" size={17} className={styles.flameIcon} /> Study streak</div>
           <div className={styles.streakBody}>
             <div className={styles.streakNums}>
               <div className={styles.streakBig}><CountUp value={stats.streak.current} /><small> days</small></div>
@@ -224,7 +224,7 @@ export function Dashboard() {
               size={78}
               stroke={8}
             >
-              <span className={styles.flameSm}>🔥</span>
+              <Icon name="flame" size={24} className={styles.flameIcon} />
             </GradientRing>
           </div>
           <div className={styles.dots}>

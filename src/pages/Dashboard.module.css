@@ -18,8 +18,7 @@
   background: linear-gradient(100deg, var(--grad-1), var(--grad-2), var(--grad-3));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.wave { display: inline-block; transform-origin: 70% 70%; animation: wave 2.4s var(--ease) infinite; }
-@keyframes wave { 0%,60%,100% { transform: rotate(0); } 10%,30% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); } }
+.flameIcon { color: var(--warn); }
 .bell {
   flex: none; width: 42px; height: 42px; border-radius: var(--r-md);
   display: grid; place-items: center; color: var(--ink-2);
@@ -43,7 +42,6 @@
 .panelHead { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
 .panelTitle { display: inline-flex; align-items: center; gap: var(--sp-2); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.01em; }
 .headIcon { color: var(--brand); display: inline-grid; place-items: center; }
-.flame { font-size: 17px; }
 .viewAll { font-size: var(--text-sm); font-weight: 600; color: var(--brand); }
 .viewAll:hover { text-decoration: underline; }
 
@@ -161,7 +159,6 @@
 .streakBig { font-size: var(--text-2xl); font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
 .streakBig small { font-size: var(--text-sm); color: var(--ink-3); font-weight: 600; }
 .streakBest { margin-top: 6px; font-size: var(--text-sm); font-weight: 650; color: var(--ok); }
-.flameSm { font-size: 22px; }
 .dots { display: flex; justify-content: space-between; gap: 4px; }
 .dotCol { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .dotLabel { font-size: 10px; color: var(--ink-3); font-weight: 600; }

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Badge, Button, Card, CardBody, CardHeader, Icon, ThemePicker } from "../components";
 import { PROGRAM_WEEKS, prettyLong } from "../data/curriculum";
 import { DEFAULT_EXAM, DEFAULT_START } from "../lib/plan";
@@ -173,6 +174,18 @@ export function Settings() {
             )}
           </div>
         </CardBody>
+      </Card>
+
+      {/* ---- About ---- */}
+      <Card interactive>
+        <Link to="/about" className={styles.aboutRow}>
+          <span className={styles.aboutIcon}><Icon name="info" size={18} /></span>
+          <span className={styles.aboutText}>
+            <b>About &amp; links</b>
+            <span>Our links and the other study trackers available</span>
+          </span>
+          <Icon name="chevronRight" size={18} className={styles.aboutArrow} />
+        </Link>
       </Card>
     </div>
   );

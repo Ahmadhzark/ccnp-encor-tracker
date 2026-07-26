@@ -63,3 +63,11 @@
 
 .confirm { display: flex; gap: var(--sp-2); animation: pop var(--dur-2) var(--spring); }
 @keyframes pop { from { opacity: 0; transform: scale(0.92); } }
+
+/* About row (links to the About page) */
+.aboutRow { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-4) var(--sp-5); }
+.aboutIcon { flex: none; width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; color: var(--brand); background: var(--brand-soft); }
+.aboutText { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.aboutText b { font-size: var(--text-sm); font-weight: 650; color: var(--ink); }
+.aboutText span { font-size: var(--text-xs); color: var(--ink-3); }
+.aboutArrow { color: var(--ink-3); flex: none; }
