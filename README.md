@@ -9,20 +9,29 @@ Everything you record stays **in your browser** on your device. There is no
 server, no account, and no database to set up. It works offline and can be
 installed to a phone or desktop like a native app.
 
+**Live app:** https://ahmadhzark.github.io/ccnp-encor-tracker/
+
 ---
 
 ## What's inside
 
-- **Dashboard** — overall weighted progress, current week/day, streak, and pace.
+- **Dashboard** — a mobile-app home: weighted progress ring, exam countdown,
+  today's plan, a built-in **study-session timer** that logs your hours, a
+  **pace** read-out (are you on track?), a weak-areas **review** list, streak
+  tracking, and quick actions.
 - **Topics** — every blueprint topic as a card with an "exam angle" (the thing
   most likely tested), a confidence rating, notes, bookmarks and revision count.
 - **Labs** — hands-on labs with difficulty, time and technology, plus per-lab
   notes, reflections and file attachments.
-- **Log** — record study hours per day; sessions add up within a day.
-- **Analytics** — a contribution-style heatmap and charts of where your time and
-  progress are going.
-- **Goals** — milestones and targets to keep the plan on schedule.
-- **Light / dark theme**, mobile-first layout, and offline (PWA) support.
+- **Flashcards** — quick-fire the exam angle for every topic, filter by domain,
+  flip and shuffle.
+- **Notes** — a personal scratchpad for summaries, gotchas and reminders.
+- **Log** — record study hours per day with a contribution-style heatmap.
+- **Analytics** — charts of where your time, confidence and progress are going.
+- **Goals** — milestones and a weekly study target to keep the plan on schedule.
+- **About** — links and the other trackers in the family.
+- **Four full themes** (Copper, Midnight, Ocean, Meadow), mobile-first layout,
+  **backup / restore**, and offline (PWA) support.
 
 ---
 
@@ -58,9 +67,12 @@ Then open the URL it prints (usually **http://localhost:5173**) in your browser.
 
 ## Making it your own study plan
 
-The entire schedule is calculated from a single start date. To point the plan at
-your own study window, open **`src/data/curriculum.ts`** and edit the values at
-the top:
+The quickest way: open **Settings** in the app and set your **name**, **start
+date**, **exam date** and **theme** — no code needed. Your study window drives
+the whole 24-week schedule, countdown and pace.
+
+Prefer to change the built-in defaults in code? Open
+**`src/data/curriculum.ts`** and edit the values at the top:
 
 ```ts
 export const START = "2026-07-16"; // first day of week 1 (YYYY-MM-DD)
@@ -83,7 +95,9 @@ local storage on the device you use it on. That means:
 - Clearing your browser's site data will erase your progress, so treat it like
   any local file and back it up if it matters.
 
-To wipe progress and start over, use the reset control inside the app.
+Use **Settings → Backup & restore** to export everything (progress, notes,
+theme) to a JSON file and import it back on any device. To wipe progress and
+start over, use the reset control in Settings.
 
 ---
 

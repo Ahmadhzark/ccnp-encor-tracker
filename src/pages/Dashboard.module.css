@@ -180,6 +180,46 @@
 
 .footNote { text-align: center; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-3); padding-top: var(--sp-1); }
 
+/* ---- streak nudge ---- */
+.nudge {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4); border-radius: var(--r-lg); text-align: left;
+  background: linear-gradient(100deg, color-mix(in srgb, var(--warn) 16%, var(--surface)), var(--surface));
+  border: 1px solid color-mix(in srgb, var(--warn) 34%, var(--rule));
+  transition: transform var(--dur-1) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+.nudge:hover { box-shadow: var(--shadow-md); }
+.nudge:active { transform: scale(0.99); }
+.nudgeIcon { flex: none; width: 34px; height: 34px; border-radius: var(--r-md); display: grid; place-items: center; color: var(--warn); background: color-mix(in srgb, var(--warn) 18%, transparent); }
+.nudgeText { flex: 1; font-size: var(--text-sm); color: var(--ink-2); }
+.nudgeText b { color: var(--ink); font-weight: 700; }
+.nudgeArrow { color: var(--warn); flex: none; }
+
+/* ---- pace ---- */
+.paceBadge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 10px; border-radius: var(--r-full); }
+.pace_ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, transparent); }
+.pace_warn { color: var(--warn); background: color-mix(in srgb, var(--warn) 16%, transparent); }
+.pace_bad { color: var(--bad); background: color-mix(in srgb, var(--bad) 16%, transparent); }
+.paceMsg { font-size: var(--text-sm); line-height: 1.55; color: var(--ink-2); }
+.paceMsg b { color: var(--ink); font-weight: 700; }
+.paceStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+.paceStat { display: flex; flex-direction: column; gap: 2px; padding: var(--sp-3); border-radius: var(--r-md); background: var(--surface-2); text-align: center; }
+.paceStat b { font-family: var(--font-mono); font-size: var(--text-md); font-weight: 700; color: var(--ink); }
+.paceStat span { font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-3); }
+
+/* ---- review ---- */
+.reviewList { display: flex; flex-direction: column; gap: var(--sp-2); }
+.reviewItem {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3); border-radius: var(--r-md);
+  border: 1px solid var(--rule-soft); background: var(--surface);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+.reviewItem:hover { border-color: var(--rule); background: var(--surface-2); }
+.reviewDot { flex: none; width: 8px; height: 8px; border-radius: var(--r-full); background: var(--bad); }
+.reviewName { flex: 1; min-width: 0; font-size: var(--text-sm); font-weight: 600; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reviewTag { flex: none; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--bad); background: color-mix(in srgb, var(--bad) 14%, transparent); padding: 3px 8px; border-radius: var(--r-full); }
+
 /* ---- responsive ---- */
 @media (max-width: 560px) {
   .overall { grid-template-columns: 1fr; justify-items: center; gap: var(--sp-4); }

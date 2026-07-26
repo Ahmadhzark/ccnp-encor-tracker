@@ -7,6 +7,7 @@ import { Log } from "./pages/Log";
 import { Analytics } from "./pages/Analytics";
 import { Goals } from "./pages/Goals";
 import { Notes } from "./pages/Notes";
+import { Flashcards } from "./pages/Flashcards";
 import { Settings } from "./pages/Settings";
 import { About } from "./pages/About";
 
@@ -21,6 +22,7 @@ export function App() {
         <Route path="analytics" element={<Analytics />} />
         <Route path="goals" element={<Goals />} />
         <Route path="notes" element={<Notes />} />
+        <Route path="flashcards" element={<Flashcards />} />
         <Route path="settings" element={<Settings />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<Dashboard />} />

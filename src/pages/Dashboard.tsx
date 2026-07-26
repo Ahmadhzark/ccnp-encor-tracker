@@ -4,7 +4,7 @@ import { CountUp } from "../components/CountUp";
 import { GradientRing } from "../components/GradientRing";
 import { Icon } from "../components/Icon";
 import type { IconName } from "../components/Icon";
-import { PROGRAM_WEEKS, TOTAL_LABS, TOTAL_TOPICS, prettyLong } from "../data/curriculum";
+import { PROGRAM_WEEKS, TOPICS, TOTAL_HOURS, TOTAL_LABS, TOTAL_TOPICS, prettyLong } from "../data/curriculum";
 import { plan } from "../lib/plan";
 import { formatDuration, todaysPlan } from "../lib/today";
 import { currentWeek, daysLeft, todayISO } from "../lib/time";
@@ -92,10 +92,26 @@ export function Dashboard() {
 
   const quick: { label: string; icon: IconName; color: string; onClick: () => void }[] = [
     { label: "Notes", icon: "book", color: "#22c55e", onClick: () => nav("/notes") },
-    { label: "Flashcards", icon: "cards", color: "#8b5cf6", onClick: () => toast("Flashcards are coming soon.") },
-    { label: "Quizzes", icon: "help", color: "#f59e0b", onClick: () => toast("Quizzes are coming soon.") },
+    { label: "Flashcards", icon: "cards", color: "#8b5cf6", onClick: () => nav("/flashcards") },
+    { label: "Log time", icon: "clock", color: "#f59e0b", onClick: () => nav("/log") },
     { label: "Analytics", icon: "analytics", color: "#3b82f6", onClick: () => nav("/analytics") },
   ];
+
+  // Weak areas to review: weak-tagged first, then lowest confidence (≤ 2).
+  const review = useMemo(() => {
+    return TOPICS.map((t) => ({ t, pr: topics[t.id] }))
+      .filter(({ pr }) => pr?.tag === "weak" || (pr?.confidence != null && pr.confidence <= 2))
+      .sort((a, b) => {
+        const aw = a.pr?.tag === "weak" ? 0 : 1;
+        const bw = b.pr?.tag === "weak" ? 0 : 1;
+        if (aw !== bw) return aw - bw;
+        return (a.pr?.confidence ?? 5) - (b.pr?.confidence ?? 5);
+      })
+      .slice(0, 3)
+      .map(({ t }) => t);
+  }, [topics]);
+
+  const noSessionToday = stats.hoursToday === 0 && !running;
 
   return (
     <div className={styles.page}>
@@ -112,6 +128,19 @@ export function Dashboard() {
           <Icon name="bell" size={20} />
         </button>
       </header>
+
+      {/* streak-protection nudge */}
+      {noSessionToday && (
+        <button className={styles.nudge} onClick={start}>
+          <span className={styles.nudgeIcon}><Icon name="flame" size={18} /></span>
+          <span className={styles.nudgeText}>
+            {stats.streak.current > 0
+              ? <>Keep your <b>{stats.streak.current}-day</b> streak alive — start a study session today.</>
+              : <>Log some study today to start a streak.</>}
+          </span>
+          <Icon name="play" size={16} className={styles.nudgeArrow} />
+        </button>
+      )}
 
       {/* exam countdown */}
       <div className={styles.examCard}>
@@ -146,6 +175,32 @@ export function Dashboard() {
           <span>View progress</span>
           <Icon name="chevronRight" size={17} className={styles.viewChevron} />
         </Link>
+      </section>
+
+      {/* pace & projection */}
+      <section className={styles.panel}>
+        <div className={styles.panelHead}>
+          <span className={styles.panelTitle}><span className={styles.headIcon}><Icon name="target" size={17} /></span> Pace</span>
+          <span className={`${styles.paceBadge} ${styles["pace_" + stats.pace.level]}`}>
+            {stats.pace.level === "ok" ? "On track" : stats.pace.level === "warn" ? "Behind pace" : "At risk"}
+          </span>
+        </div>
+        <p className={styles.paceMsg}>
+          {stats.pace.hoursLeft === 0 ? (
+            <>All {TOTAL_HOURS}h logged — the program is complete.</>
+          ) : stats.pace.perWeekActual === 0 ? (
+            <>No hours logged yet. Aim for about <b>{stats.pace.perWeekNeeded}h/week</b> to reach {TOTAL_HOURS}h by exam day.</>
+          ) : stats.pace.level === "ok" ? (
+            <>At <b>{stats.pace.perWeekActual}h/week</b> you'll finish on time. Hold the line.</>
+          ) : (
+            <>You're logging <b>{stats.pace.perWeekActual}h/week</b> — lift to <b>{stats.pace.perWeekNeeded}h/week</b> to land before exam day.</>
+          )}
+        </p>
+        <div className={styles.paceStats}>
+          <div className={styles.paceStat}><b>{stats.pace.perWeekActual}h</b><span>this week's pace</span></div>
+          <div className={styles.paceStat}><b>{stats.pace.perWeekNeeded}h</b><span>needed / week</span></div>
+          <div className={styles.paceStat}><b>{stats.pace.hoursLeft}h</b><span>hours to go</span></div>
+        </div>
       </section>
 
       {/* today's plan */}
@@ -209,6 +264,26 @@ export function Dashboard() {
           </div>
         )}
       </section>
+
+      {/* weak areas to review */}
+      {review.length > 0 && (
+        <section className={styles.panel}>
+          <div className={styles.panelHead}>
+            <span className={styles.panelTitle}><span className={styles.headIcon}><Icon name="sparkle" size={17} /></span> Review these</span>
+            <Link to="/flashcards" className={styles.viewAll}>Practice</Link>
+          </div>
+          <div className={styles.reviewList}>
+            {review.map((t) => (
+              <Link key={t.id} to="/topics" className={styles.reviewItem}>
+                <span className={styles.reviewDot} />
+                <span className={styles.reviewName}>{t.name}</span>
+                <span className={styles.reviewTag}>{topics[t.id]?.tag === "weak" ? "Weak" : `Conf ${topics[t.id]?.confidence}`}</span>
+                <Icon name="chevronRight" size={18} className={styles.planChevron} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* streak + quick actions */}
       <div className={styles.bottomRow}>
