@@ -38,7 +38,7 @@ export function Labs() {
       <div className={pageStyles.pageHead}>
         <h1>Labs</h1>
         <p>
-          {LABS.length} of {TOTAL_LABS} labs detailed so far — {doneCount} done. Track status, log time, capture
+          {TOTAL_LABS} hands-on labs across the full blueprint — {doneCount} done. Track status, log time, capture
           reflections and attach screenshots or config files.
         </p>
       </div>

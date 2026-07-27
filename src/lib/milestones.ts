@@ -47,9 +47,9 @@ export function computeMilestones(stats: Stats, analytics: Analytics): Milestone
     {
       group: "Labs", icon: "labs", unit: "", current: stats.labsDone,
       tiers: [
-        { target: 5, label: "First 5 labs" },
-        { target: 15, label: "15 labs built" },
-        { target: 24, label: "All detailed labs" },
+        { target: 15, label: "First 15 labs" },
+        { target: 75, label: "Halfway through the labs" },
+        { target: 150, label: "All 150 labs done" },
       ],
     },
     {
