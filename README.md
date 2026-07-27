@@ -10,7 +10,7 @@ Everything you record stays **in your browser** on your device. There is no
 server, no account, and no database to set up. It works offline and can be
 installed to a phone or desktop like a native app.
 
-**Live app:** https://ahmadhzark.github.io/ccnp-encor-tracker/
+**Live app:** deployed to GitHub Pages (see the repository's Pages settings for the URL).
 
 ---
 

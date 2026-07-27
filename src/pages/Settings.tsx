@@ -82,7 +82,7 @@ export function Settings() {
             <input
               type="text"
               className={styles.dateInput}
-              placeholder="e.g. Ahmadh"
+              placeholder="e.g. Alex"
               maxLength={24}
               defaultValue={name ?? ""}
               onBlur={(e) => setName(e.target.value)}

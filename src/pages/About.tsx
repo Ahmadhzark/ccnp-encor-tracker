@@ -3,22 +3,20 @@ import type { IconName } from "../components/Icon";
 import pageStyles from "./pages.module.css";
 import styles from "./About.module.css";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// EDIT ME: your links and your other trackers live here. Swap the placeholder
-// URLs (#) for the real ones and add/remove entries as you like.
-// ─────────────────────────────────────────────────────────────────────────────
+// Certflow links and the tracker line-up. Update these arrays to change the
+// About page — links, and which trackers show as live vs coming soon.
 
 interface LinkItem { label: string; handle: string; href: string; icon: IconName; color: string; }
 
 const LINKS: LinkItem[] = [
-  { label: "GitHub", handle: "@certlow-0", href: "https://github.com/certlow-0", icon: "github", color: "#8b5cf6" },
+  { label: "GitHub", handle: "@certflow-0", href: "https://github.com/certflow-0", icon: "github", color: "#8b5cf6" },
   { label: "Email", handle: "usecertflow@gmail.com", href: "mailto:usecertflow@gmail.com", icon: "mail", color: "#22c55e" },
 ];
 
 interface Tracker { name: string; blurb: string; href: string; status: "live" | "current" | "soon"; }
 
 const TRACKERS: Tracker[] = [
-  { name: "CCNP ENCOR 350-401", blurb: "This app — a full 24-week program tracker with labs, analytics and goals.", href: "https://ahmadhzark.github.io/ccnp-encor-tracker/", status: "current" },
+  { name: "CCNP ENCOR 350-401", blurb: "This app — a full 24-week program tracker with labs, analytics and goals.", href: "#", status: "current" },
   { name: "AWS Solutions Architect (SAA)", blurb: "Associate-level study planner and hands-on lab tracker.", href: "#", status: "soon" },
   { name: "CCNA 200-301", blurb: "Foundations tracker for the Cisco CCNA path.", href: "#", status: "soon" },
 ];
