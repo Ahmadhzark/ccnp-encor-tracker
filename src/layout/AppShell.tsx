@@ -107,7 +107,7 @@ export function AppShell() {
           <Icon name="settings" size={18} />
           Settings
         </NavLink>
-        <div className={styles.navFoot}>CCNP ENCOR · v1.0.0</div>
+        <div className={styles.navFoot}>Certflow · CCNP ENCOR · v1.0.0</div>
       </nav>
 
       <main className={styles.main}>

@@ -11,10 +11,9 @@ import styles from "./About.module.css";
 interface LinkItem { label: string; handle: string; href: string; icon: IconName; color: string; }
 
 const LINKS: LinkItem[] = [
-  { label: "GitHub", handle: "@Ahmadhzark", href: "https://github.com/Ahmadhzark", icon: "github", color: "#8b5cf6" },
-  { label: "Email", handle: "ahmadhzarkwork@gmail.com", href: "mailto:ahmadhzarkwork@gmail.com", icon: "mail", color: "#22c55e" },
+  { label: "GitHub", handle: "@certlow-0", href: "https://github.com/certlow-0", icon: "github", color: "#8b5cf6" },
+  { label: "Email", handle: "usecertflow@gmail.com", href: "mailto:usecertflow@gmail.com", icon: "mail", color: "#22c55e" },
   { label: "Website", handle: "add your site", href: "#", icon: "link", color: "#3b82f6" },
-  { label: "X / Twitter", handle: "add your handle", href: "#", icon: "external", color: "#f59e0b" },
 ];
 
 interface Tracker { name: string; blurb: string; href: string; status: "live" | "current" | "soon"; }
@@ -32,17 +31,19 @@ export function About() {
     <div className={pageStyles.page}>
       <div className={pageStyles.pageHead}>
         <h1>About</h1>
-        <p>Who's behind this tracker, where to reach us, and the other study trackers in the family.</p>
+        <p>Who's behind this tracker, where to reach us, and the other study trackers from Certflow.</p>
       </div>
 
       {/* brand / intro */}
       <section className={styles.hero}>
         <span className={styles.mark}><Icon name="analytics" size={26} strokeWidth={2.25} /></span>
         <div className={styles.heroText}>
+          <span className={styles.brandEyebrow}>Certflow</span>
           <h2>CCNP ENCOR Tracker</h2>
           <p>
             A focused, offline-first study companion for the Cisco CCNP ENCOR 350-401 exam — built to keep your
-            topics, labs, study hours and momentum in one place. Crafted by a fellow learner, for learners.
+            topics, labs, study hours and momentum in one place. Made by <b>Certflow</b>, study tools for people
+            chasing certifications.
           </p>
           <span className={styles.version}>Version 1.0.0</span>
         </div>
@@ -79,7 +80,7 @@ export function About() {
 
       {/* other trackers */}
       <section className={styles.block}>
-        <div className={styles.blockTitle}>Other trackers</div>
+        <div className={styles.blockTitle}>More trackers from Certflow</div>
         <div className={styles.trackerList}>
           {TRACKERS.map((t) => {
             const disabled = t.href === "#" || t.status === "current";
@@ -107,7 +108,7 @@ export function About() {
       </section>
 
       <div className={styles.madeWith}>
-        Made with <Icon name="heart" size={14} className={styles.heart} /> for the CCNP journey · © {new Date().getFullYear()}
+        Made with <Icon name="heart" size={14} className={styles.heart} /> by Certflow · © {new Date().getFullYear()}
       </div>
     </div>
   );

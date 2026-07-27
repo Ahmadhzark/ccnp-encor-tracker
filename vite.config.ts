@@ -15,7 +15,7 @@ export default defineConfig({
       manifest: {
         name: 'CCNP ENCOR Progress Tracker',
         short_name: 'ENCOR',
-        description: 'A progress tracker for the Cisco CCNP ENCOR 350-401 certification.',
+        description: 'A Certflow study tracker for the Cisco CCNP ENCOR 350-401 certification.',
         theme_color: '#a8623a',
         background_color: '#0a1226',
         display: 'standalone',
