@@ -13,7 +13,6 @@ interface LinkItem { label: string; handle: string; href: string; icon: IconName
 const LINKS: LinkItem[] = [
   { label: "GitHub", handle: "@certlow-0", href: "https://github.com/certlow-0", icon: "github", color: "#8b5cf6" },
   { label: "Email", handle: "usecertflow@gmail.com", href: "mailto:usecertflow@gmail.com", icon: "mail", color: "#22c55e" },
-  { label: "Website", handle: "add your site", href: "#", icon: "link", color: "#3b82f6" },
 ];
 
 interface Tracker { name: string; blurb: string; href: string; status: "live" | "current" | "soon"; }

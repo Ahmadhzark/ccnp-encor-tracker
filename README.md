@@ -1,9 +1,10 @@
-# CCNP ENCOR 350-401 — Progress Tracker
+# CCNP ENCOR 350-401 Tracker — by Certflow
 
-A clean, installable web app for tracking your study progress toward the Cisco
-**CCNP ENCOR 350-401** exam. It ships with the full 24-week study plan, all six
-exam domains (weighted by their real blueprint share), the topic list, and a
-starter lab set — so you open it and start ticking things off.
+A clean, installable web app by **Certflow** for tracking your study progress
+toward the Cisco **CCNP ENCOR 350-401** exam. It ships with the full 24-week
+study plan, all six exam domains (weighted by their real blueprint share), the
+topic list, and **150 detailed hands-on labs** — so you open it and start ticking
+things off.
 
 Everything you record stays **in your browser** on your device. There is no
 server, no account, and no database to set up. It works offline and can be

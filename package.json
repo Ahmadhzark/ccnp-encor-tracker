@@ -2,7 +2,8 @@
   "name": "ccnp-encor-tracker",
   "private": true,
   "version": "1.0.0",
-  "description": "A browser-based progress tracker for the Cisco CCNP ENCOR 350-401 certification.",
+  "description": "Certflow — a browser-based study tracker for the Cisco CCNP ENCOR 350-401 certification.",
+  "author": "Certflow",
   "type": "module",
   "scripts": {
     "dev": "vite",
