@@ -1,150 +1,95 @@
-# CCNP ENCOR 350-401 Tracker — by Certflow
+<div align="center">
 
-A clean, installable web app by **Certflow** for tracking your study progress
-toward the Cisco **CCNP ENCOR 350-401** exam. It ships with the full 24-week
-study plan, all six exam domains (weighted by their real blueprint share), the
-topic list, and **150 detailed hands-on labs** — so you open it and start ticking
-things off.
+<!-- Replace with your product logo (recommended 480×480 PNG at docs/assets/logo.png) -->
+<img src="docs/assets/logo.png" alt="Certflow CCNP ENCOR Tracker" width="120" onerror="this.style.display='none'" />
 
-Everything you record stays **in your browser** on your device. There is no
-server, no account, and no database to set up. It works offline and can be
-installed to a phone or desktop like a native app.
+# Certflow · CCNP ENCOR 350‑401 Tracker
 
-**Live app:** deployed to GitHub Pages (see the repository's Pages settings for the URL).
+**A premium, offline‑first study tracker for the Cisco CCNP ENCOR 350‑401 exam.**
 
----
+Topics · 150 hands‑on labs · study‑session timer · analytics · flashcards · notes · goals · 4 full themes — all in one installable web app, with zero backend.
 
-## What's inside
+![Version](https://img.shields.io/badge/version-1.0.0-6d5efc)
+![React](https://img.shields.io/badge/React-19-149eca)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
+![Vite](https://img.shields.io/badge/Vite-8-646cff)
+![PWA](https://img.shields.io/badge/PWA-offline-5a0fc8)
+![License](https://img.shields.io/badge/license-Commercial-black)
 
-- **Dashboard** — a mobile-app home: weighted progress ring, exam countdown,
-  today's plan, a built-in **study-session timer** that logs your hours, a
-  **pace** read-out (are you on track?), a weak-areas **review** list, streak
-  tracking, and quick actions.
-- **Topics** — every blueprint topic as a card with an "exam angle" (the thing
-  most likely tested), a confidence rating, notes, bookmarks and revision count.
-- **Labs** — hands-on labs with difficulty, time and technology, plus per-lab
-  notes, reflections and file attachments.
-- **Flashcards** — quick-fire the exam angle for every topic, filter by domain,
-  flip and shuffle.
-- **Notes** — a personal scratchpad for summaries, gotchas and reminders.
-- **Log** — record study hours per day with a contribution-style heatmap.
-- **Analytics** — charts of where your time, confidence and progress are going.
-- **Goals** — milestones and a weekly study target to keep the plan on schedule.
-- **About** — links and the other trackers in the family.
-- **Four full themes** (Copper, Midnight, Ocean, Meadow), mobile-first layout,
-  **backup / restore**, and offline (PWA) support.
+<!-- Replace with a real screenshot/banner: docs/assets/banner.png -->
+<img src="docs/assets/banner.png" alt="Product banner" width="880" onerror="this.style.display='none'" />
+
+</div>
 
 ---
 
-## Requirements
+## ✨ Highlights
 
-- **Node.js 20 or newer** (includes `npm`). Check with `node -v`.
+- **Command‑centre dashboard** — weighted progress ring, exam countdown, today's plan, a real **study‑session timer** that logs your hours, a **pace** read‑out, a weak‑areas **review** list, and streaks.
+- **150 detailed labs** across all six exam domains, each with difficulty, time and technology.
+- **Flashcards**, **topic‑linked notes**, **analytics**, and **achievements/goals**.
+- **4 full themes** (Copper, Midnight, Ocean, Meadow) — not just an accent swap.
+- **Offline‑first PWA** — installable to phone/desktop, works with no connection.
+- **100% client‑side** — no server, no account, no database. Data stays on the device, with one‑click **backup / restore**.
 
-That's the only prerequisite for running or building the app.
+## 🔗 Live demo
 
----
+Deploy in minutes to GitHub Pages, Vercel, Netlify or any static host — see [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+_(Add your live URL here once deployed.)_
 
-## Getting started
+## 🖼️ Screenshots
 
-Open a terminal in this folder and run:
+Place your captures in `docs/assets/` and they'll render here.
+
+| Dashboard | Labs | Analytics |
+|---|---|---|
+| ![Dashboard](docs/assets/screenshot-dashboard.png) | ![Labs](docs/assets/screenshot-labs.png) | ![Analytics](docs/assets/screenshot-analytics.png) |
+
+## 🚀 Quick start
 
 ```bash
-npm install       # install dependencies (first time only)
-npm run dev        # start the app in development mode
+npm install      # install dependencies (Node.js 20+)
+npm run dev      # http://localhost:5173
+npm run build    # production build → dist/
+npm run preview  # preview the production build
 ```
 
-Then open the URL it prints (usually **http://localhost:5173**) in your browser.
+Full beginner walkthrough: [`docs/INSTALLATION.md`](docs/INSTALLATION.md).
 
-### All scripts
+## 🧩 Make it yours
 
-| Command | What it does |
+Everything is data‑driven and documented:
+
+- **Curriculum & dates** — `src/data/curriculum.ts` (start/exam dates, topics, 150 labs).
+- **Themes & design tokens** — `src/styles/tokens.css`.
+- **Branding & links** — `src/pages/About.tsx`, `src/layout/AppShell.tsx`.
+
+See [`docs/CUSTOMIZATION.md`](docs/CUSTOMIZATION.md).
+
+## 📚 Documentation
+
+| Guide | What it covers |
 |---|---|
-| `npm run dev` | Run locally with hot reload while you use it. |
-| `npm run build` | Produce an optimized static build in the `dist/` folder. |
-| `npm run preview` | Serve the built `dist/` folder to check the production build. |
-| `npm run lint` | Check the code with the linter. |
+| [INSTALLATION](docs/INSTALLATION.md) | Prerequisites → running locally, step by step |
+| [DEPLOYMENT](docs/DEPLOYMENT.md) | GitHub Pages, Vercel, Netlify, Cloudflare, VPS, Docker |
+| [CUSTOMIZATION](docs/CUSTOMIZATION.md) | Curriculum, themes, branding, copy |
+| [CONFIGURATION](docs/CONFIGURATION.md) | Build config, PWA, storage keys |
+| [FEATURES](docs/FEATURES.md) | Every feature explained |
+| [PROJECT_STRUCTURE](docs/PROJECT_STRUCTURE.md) | Folder‑by‑folder tour |
+| [GITHUB](docs/GITHUB.md) | Repos, commits, releases, Actions |
+| [VERCEL](docs/VERCEL.md) | One‑click Vercel deploy |
+| [FAQ](docs/FAQ.md) · [SUPPORT](docs/SUPPORT.md) | Answers & help |
+| [ROADMAP](docs/ROADMAP.md) · [CHANGELOG](docs/CHANGELOG.md) | What's next & version history |
+| [CONTRIBUTING](docs/CONTRIBUTING.md) · [LICENSE](LICENSE.md) | Contributing & terms |
 
----
+## 🛠️ Tech stack
 
-## Making it your own study plan
+React 19 · TypeScript (strict) · Vite 8 · React Router (hash) · Zustand · vite‑plugin‑pwa. No runtime backend.
 
-The quickest way: open **Settings** in the app and set your **name**, **start
-date**, **exam date** and **theme** — no code needed. Your study window drives
-the whole 24-week schedule, countdown and pace.
+## 📄 License
 
-Prefer to change the built-in defaults in code? Open
-**`src/data/curriculum.ts`** and edit the values at the top:
+Commercial product — see [`LICENSE.md`](LICENSE.md). One purchase = one end product per license tier.
 
-```ts
-export const START = "2026-07-16"; // first day of week 1 (YYYY-MM-DD)
-export const EXAM  = "2026-12-31"; // your exam date (YYYY-MM-DD)
-```
+## 💬 Support & credits
 
-Every week's dates, the "current week", days remaining and pace all recalculate
-from `START` automatically — this is the only place you need to change.
-
----
-
-## Where your data lives
-
-All progress (ticked topics, lab notes, logged hours) is saved in your browser's
-local storage on the device you use it on. That means:
-
-- It is private to you and never leaves your machine.
-- It is **per-device / per-browser** — using a different browser or a private
-  window starts fresh.
-- Clearing your browser's site data will erase your progress, so treat it like
-  any local file and back it up if it matters.
-
-Use **Settings → Backup & restore** to export everything (progress, notes,
-theme) to a JSON file and import it back on any device. To wipe progress and
-start over, use the reset control in Settings.
-
----
-
-## Publishing it online (optional)
-
-Because the build is plain static files, you can host it anywhere:
-
-1. Run `npm run build`.
-2. Upload the contents of the generated **`dist/`** folder to any static host —
-   Netlify, Vercel, Cloudflare Pages, GitHub Pages, or any web server.
-
-No backend or environment variables are required.
-
----
-
-## Putting it in Git
-
-This project is ready to be tracked with Git. From this folder:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: CCNP ENCOR progress tracker"
-```
-
-To push it to a new GitHub repository:
-
-```bash
-# 1. Create an empty repo on github.com (do not add a README or .gitignore).
-# 2. Connect it and push (replace the URL with your repo's):
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-git branch -M main
-git push -u origin main
-```
-
-`node_modules/` and build output are already excluded via `.gitignore`, so only
-the source is committed. After the first push, the normal cycle is:
-
-```bash
-git add .
-git commit -m "Describe what you changed"
-git push
-```
-
----
-
-## Tech stack
-
-React 19 · TypeScript · Vite · React Router · Zustand · PWA. No runtime backend.
+Support: see [`docs/SUPPORT.md`](docs/SUPPORT.md). Built by **Certflow** — study tools for people chasing certifications.

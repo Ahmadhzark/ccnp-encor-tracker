@@ -2,15 +2,21 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import "./styles/global.css";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { ThemeProvider } from "./theme/ThemeProvider";
 import { App } from "./App";
 
-createRoot(document.getElementById("root")!).render(
+const rootEl = document.getElementById("root");
+if (!rootEl) throw new Error("Root element #root not found");
+
+createRoot(rootEl).render(
   <StrictMode>
-    <ThemeProvider>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </ThemeProvider>
+    </ErrorBoundary>
   </StrictMode>,
 );
