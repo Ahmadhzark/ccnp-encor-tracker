@@ -3,7 +3,6 @@
   "plugins": ["react", "typescript", "oxc"],
   "rules": {
     "react/rules-of-hooks": "error",
-    "// only-export-components": "Vite Fast Refresh DX hint only; irrelevant to the production build.",
     "react/only-export-components": "off"
   }
 }
